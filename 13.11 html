@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+ <html>
+<body>
+ <p>UI version: 2018.11.12.0</p>
+<p id = "id_logic_version"></p>
+ <button type = "button" id = "id_button">Start</button>
+ <video height = "400" width = "400" autoplay controls id = "id_video">Video tag is not supported</video>
+ <script src = "cam.js"></script>
+ </body>
+</html> 
+
+document.getElementById("id_logic_version").innerHTML = "Logic version: 2018.11.12.0";
+document.getElementById("id_button").addEventListener("click", start);
+ //-------------------------------
+function on_success(e)
+{
+	document.getElementById("id_video").srcObject = e;
+}
+//-------------------------------
+function on_failure(e)
+{
+	alert("Cannot read camera");
+}
+//-------------------------------
+function start()
+{
+	var c = {audio: true, video = true};
+	navigator.mediaDevices.getUserMedia(c).then(on_success).catch(on_failure);
+}
+//------------------------------- 
+
+//------------------------------
+function start()
+{
+	var c = {audio: true, video: {facingMode: "user"}};
+	var c = {audio: true, video: true};
+	navigator.mediaDevices.getUserMedia(c).then(on_success).catch(on_failure);
+}
+//------------------------------
