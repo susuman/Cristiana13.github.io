@@ -18,7 +18,7 @@ var p={audio:true, video:true};
 navigator.mediaDevices.getUserMedia(p).then(on_ok).catch(on_error);
 }
 //---------------------------------------------
-function on_touch (e)
+function on_touch(e)
 {
  var canvas =document.getElementById("id_canvas") ;
   var context =canvas.getContext("2d");
