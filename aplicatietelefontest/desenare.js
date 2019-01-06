@@ -21,8 +21,8 @@ function genereaza_culoare()
 {
 	var sir = "#";
 	var litere = "0123456789ABCDEF";
-	for (var i = 0; i < 6; i++)
-		sir += litere[Math.ceil(Math.random() * 16)];
+	for (var i = 0; i < 8; i++)
+		sir += litere[Math.ceil(Math.random() * 10)];
 	return sir;
 }
 //---------------------------------
@@ -31,7 +31,7 @@ function on_touch(e)
 	e.preventDefault();
 	
 	for (var i = 0; i < e.changedTouches.length; i++){
-		var context = canvas.getContext("3d");
+		var context = canvas.getContext("2d");
 		var last_position = {x: 1, y: 1, id: 1};
 		last_position.x = e.changedTouches.item(i).pageX;		
 		last_position.y = e.changedTouches.item(i).pageY;
