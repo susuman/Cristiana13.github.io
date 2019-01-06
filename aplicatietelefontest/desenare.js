@@ -1,5 +1,5 @@
 document.getElementById("id_logic_version").innerHTML = 
-		"Logic version = 2018.12.06.1";
+		"Logic version = 2018.12.04.0";
 		
 var canvas = document.getElementById("id_canvas");
 canvas.addEventListener("touchstart", on_touch);
@@ -21,8 +21,8 @@ function genereaza_culoare()
 {
 	var sir = "#";
 	var litere = "0123456789ABCDEF";
-	for (var i = 0; i < 8; i++)
-		sir += litere[Math.ceil(Math.random() * 10)];
+	for (var i = 0; i < 6; i++)
+		sir += litere[Math.ceil(Math.random() * 16)];
 	return sir;
 }
 //---------------------------------
@@ -32,11 +32,11 @@ function on_touch(e)
 	
 	for (var i = 0; i < e.changedTouches.length; i++){
 		var context = canvas.getContext("2d");
-		var last_position = {x: 1, y: 1, id: 1};
+		var last_position = {x: 0, y: 0, id: 0};
 		last_position.x = e.changedTouches.item(i).pageX;		
 		last_position.y = e.changedTouches.item(i).pageY;
 		last_position.id = e.changedTouches.item(i).identifier;
-		last_position.color = genereaza_stelutecolorate();
+		last_position.color = genereaza_culoare();
 		
 		context.beginPath();
 		context.lineWidth = 1;
@@ -44,7 +44,7 @@ function on_touch(e)
 		context.fillStyle = last_position.color;
 		context.arc(e.changedTouches.item(i).pageX - rect.left,
 					e.changedTouches.item(i).pageY - rect.top,
-					20,
+					10,
 					0, 2 * Math.PI
 					);
 		context.fill();
@@ -65,7 +65,7 @@ function on_touch_move(e)
 			if (last_position_array[j].id == e.changedTouches.item(i).identifier)
 				break;
 		
-		var context = canvas.getContext("3d");
+		var context = canvas.getContext("2d");
 		context.beginPath();
 		context.lineWidth = 1;
 		context.strokeStyle = last_position_array[j].color;
@@ -79,7 +79,7 @@ function on_touch_move(e)
 		context.stroke();			
 					
 		context.beginPath();
-		context.lineWidth = 40;		
+		context.lineWidth = 20;		
 
 			
 		context.moveTo(last_position_array[j].x - rect.left, last_position_array[j].y - rect.top);
@@ -102,7 +102,7 @@ function on_touch_end(e)
 			if (last_position_array[j].id == e.changedTouches.item(i).identifier)
 				break;
 		
-		last_position_array.splice(j, 3);
+		last_position_array.splice(j, 1);
 	}	
 }
 //---------------------------------
