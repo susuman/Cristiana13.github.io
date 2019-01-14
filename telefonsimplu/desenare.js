@@ -13,7 +13,14 @@ window.addEventListener("deviceorientation", la_schimbare_gyro);
 @@ -8,6 +8,12 @@ document .getElementById("id_x").innerHTMLL= e.beta;
 document .getElementById("id_y").innerHTMLL= e.gamma;
 document .getElementById("id_z").innerHTMLL= e.alpha;
+var rect = canvas.getBoundingClientRect();
+//---------------------------------
 
+//var lastX = 0;
+//var lastY = 0;
+
+
+var last_position_array = [];
 }
 var canvas = document.getElementById("id_canvas");
 var context = canvas.getContext("2d");
