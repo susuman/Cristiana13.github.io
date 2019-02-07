@@ -1,5 +1,5 @@
 document.getElementById("id_logic_version").innerHTML = 
-		"Logic version = 2018.12.04.0";
+		"Logic version = 2000.00.00.0";
 		
 var canvas = document.getElementById("id_canvas");
 canvas.addEventListener("touchstart", on_touch);
@@ -19,10 +19,10 @@ var last_position_array = [];
 //---------------------------------
 function genereaza_culoare()
 {
-	var sir = "#";
-	var litere = "0123456789ABCDEF";
+	var sir = "#00ff00";
+	//var litere = "AB";
 	for (var i = 0; i < 6; i++)
-		sir += litere[Math.ceil(Math.random() * 16)];
+		sir //+= litere[Math.ceil(Math.random() * 16)];
 	return sir;
 }
 //---------------------------------
@@ -105,4 +105,3 @@ function on_touch_end(e)
 		last_position_array.splice(j, 1);
 	}	
 }
-//---------------------------------
