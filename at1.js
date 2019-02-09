@@ -1,4 +1,4 @@
-document.getElementById("id_logic_version").innerHTML = "Logic: 2019.02.11.0";
+document.getElementById("id_logic_version").innerHTML = "Logic: 2019.02.09.0";
 
 var svg = document.getElementById("id_svg");
 var site_html = document.getElementById("id_html");
@@ -22,8 +22,8 @@ function on_touch_one(e)
 		alert("ai apasat anulare");
 	}
 		
-window.open("https://fise.i-track.ro");
-alert("ai accesat pagina i-track");
+window.open("https://www.w3schools.com");
+alert("ai accesat pagina html5");
 }
 
 function on_touch_two(e)
