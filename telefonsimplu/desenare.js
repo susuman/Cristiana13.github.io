@@ -1,32 +1,54 @@
-document.getElementById("id_logic_version").innerHTML = 
-		"Logic version = 2018.12.04.0";
+document.getElementById("id_logic_version").innerHTML = "Logic version: 2019.02.11.0";
+
+var svg = document.getElementById("id_svg");
+var zxc = document.getElementById("anime");
+var sound = document.getElementById("audio");
+var sound_c = document.getElementById("audio_c");
+
+svg.addEventListener("touchstart", on_touch_svg);
+svg.addEventListener("mousedown", on_touch_svg);
+//svg.addEventListener("touchend", on_touch_end);
+
+var svg_rect = svg.getBoundingClientRect();
+var nr = 0;
+
+
+function genereaza_culoare()
+{
+	var sir = "#";
+	var litere = "0123456789ABCDEF";
+	for (var i = 0; i < 6; i++)
+		sir += litere[Math.ceil(Math.random() * 16)];
+	return sir;
+}
+
+function on_touch_svg(e)
+{
+	e.preventDefault();
+	var color = genereaza_culoare();
+	
+	for (var i = 0; i < e.changedTouches.length; i++)
+	{		
 		
-var canvas = document.getElementById("id_canvas");
-canvas.addEventListener("touchstart", on_touch);
-canvas.addEventListener("touchmove", on_touch_move);
-canvas.addEventListener("touchend", on_touch_end);
-document.getElementById("id_logic_version").innerHTML = "Logic version: 2018.10.30.1";
-document.getElementById("id_logic_version").innerHTML = "Logic version: 2018.10.30.2";
+		var cub = document.createElementNS("http://www.w3.org/2000/svg", "rect");	
+		cub.setAttribute("x", e.changedTouches[i].pageX);  //atributele cercului cu valorile din paranteze
+		cub.setAttribute("y", e.changedTouches[i].pageY - svg_rect.top);
+		cub.setAttribute("width", 120);
+		cub.setAttribute("height", 50);
+		cub.setAttribute("fill", color);
+		svg.appendChild(cub);  // adaugare in svg ca si "copil" (subelement)
 
-window.addEventListener("deviceorientation", la_schimbare_gyro);
-
-@@ -8,6 +8,12 @@ document .getElementById("id_x").innerHTMLL= e.beta;
-document .getElementById("id_y").innerHTMLL= e.gamma;
-document .getElementById("id_z").innerHTMLL= e.alpha;
-var rect = canvas.getBoundingClientRect();
-//---------------------------------
-
-//var lastX = 0;
-//var lastY = 0;
-
-
-var last_position_array = [];
+	}
+	nr++
+if(color == "#0f0f00")
+{
+	nr++
 }
-var canvas = document.getElementById("id_canvas");
-var context = canvas.getContext("2d");
-
-  context.beginPath();
-  context.arc(canvas.width /2, canvas.height/2,30,0,2* Math.PI);
-  context.stroke();
-
+if(nr == 15)
+{
+	alert("felicitari ai apasat de 1000000000000 ori si ai gasit 10 euro");
+	sound_c.play();
 }
+	  	
+sound.play();
+}		  
