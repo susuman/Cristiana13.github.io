@@ -22,8 +22,8 @@ function on_touch_one(e)
 		alert("ai apasat anulare");
 	}
 		
-window.open("https://https://cristiana13.github.io/FOTOGRAFIILE%20MELE.html");
-alert("ai accesat pagina FOTOGRAFIILE%20MELE.html");
+window.open("https://www.w3schools.com");
+alert("ai accesat pagina html5");
 }
 
 function on_touch_two(e)
