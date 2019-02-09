@@ -1,4 +1,4 @@
-document.getElementById("id_logic_version").innerHTML = "Logic: 2019.02.09.0";
+document.getElementById("id_logic_version").innerHTML = "Logic: 2019.02.11.0";
 
 var svg = document.getElementById("id_svg");
 var site_html = document.getElementById("id_html");
