@@ -22,8 +22,8 @@ function on_touch_one(e)
 		alert("ai apasat anulare");
 	}
 		
-window.open("https://www.w3schools.com");
-alert("ai accesat pagina html5");
+window.open("https://fise.i-track.ro");
+alert("ai accesat pagina i-track");
 }
 
 function on_touch_two(e)
